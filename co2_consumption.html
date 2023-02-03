@@ -33,7 +33,7 @@
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<h1 class="major">Visual Analysis of CO2 Emissions and Human Development Around the World</h1>
-							<span class="image fit"><img src="images/ihdi_co2.gif" alt="" /></span>
+							<span class="image fit"><div class='tableauPlaceholder' id='viz1675444326725' style='position: relative'><noscript><a href='#'><img alt='Can we balance living sustainably and living well? ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CO&#47;CO2EmissionsStoryboard&#47;Wholivessustainably&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CO2EmissionsStoryboard&#47;Wholivessustainably' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CO&#47;CO2EmissionsStoryboard&#47;Wholivessustainably&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1675444326725');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script></span>
 							<h2>1. Project overview</h2>
 							<p><b>What:</b><br>A Tableau Storyboard resulting from the exploration of global emissions, human development and world happiness data.</p>
 							<p><b>Why:</b><br>Analysis of countries’ CO2 emissions most commonly use production-based figures, which do not accurately reflect a population’s lifestyle. Furthermore, the success of a country in offering its population a high standard of living is often measured by its GDP or GNI per capita. In order to achieve a more accurate reflection of countries’ emissions and the quality of life of their populations, I decided to base this analysis on the consumption-based CO2 emissions and the human development index instead.</p>
@@ -43,7 +43,7 @@
 								<li>"Human Development Reports Data Downloads", Accessed from <a href=https://hdr.undp.org/data-center/documentation-and-downloads>https://hdr.undp.org/data-center/documentation-and-downloads</a> on December 20, 2022.</li>
 								<li>"World Happiness Report", Accessed from <a href=https://www.kaggle.com/datasets/unsdsn/world-happiness>https://www.kaggle.com/datasets/unsdsn/world-happiness</a> on December 20, 2022.</li>
 								</ul>
-							<p>2. Primarily used Python skills (pandas, seaborn, statsmodels):</p>
+								<p>2. Primarily used Python skills (pandas, seaborn, statsmodels):</p>
 								<ul>	
 								<li>Data wrangling</li>
 								<li>Data merging</li>
@@ -53,9 +53,32 @@
 								<li>Time series analysis</li>
 								<li>Using visualization libraries</li>
 								</ul>
-							<p>3. Data visualization with Tableau to create a storyboard</p>	
-							</p>
-
+								<p>3. Data visualization with Tableau to create a storyboard</p>
+							<h2>2. Analysing and visualizing the data</h2>
+								<h3>Bringing the datasets together</h3>
+								<p>The main focus of this step was to <b>clean the three datasets</b> so as to retain only data that is relevant for this project to eliminate any possible noise for the analysis before having a stab at it with machine learning, etc. I then made sure that the country names were identical and in accordance with United Nations nomenclature, before I <b>reshaped all three to long format</b>. Finally, I <b>merged all three datasets</b> into one dataframe as a basis for the analysis.</p>
+								<p>With the merged dataset at my disposal, I set out to perform some <b>exploratory analysis and visualization</b> of the data in Python.</p> 
+								<p>Data collection for all three datasets is very complex, so each covers a <b>different set of countries over varying timespans</b>. This posed a challenge for the analysis, because the time span we can analyze depends on the variables examined. In order to not confuse the reader, I chose to <b>limit my analysis</b> to CO2 emissions and inequality-adjusted human development index.</p>  
+								<p>Although I enjoyed using machine learning (k-means clustering) on my dataset, it generated no pertinent additional insights in this project.</p> 
+								<p>In view of the time series and geographical nature of the data, <b>visualizations proved a great way to share my insights with readers</b>. But to gain a deeper understanding of the underlying factors at play, qualitative (political) analysis would be required.</p> 
+								<h3>Defining a research question</h3>
+								<p>Based on the above, I set out to <b>tackle the following research questions</b></p> 
+								<h3>Creating the Tableau storyboard</h3>
+								<p>I chose the following approach to visualize the data with Tableau:</p>
+								<li>First, presenting data on a global scale using maps:</li>
+									<a href="#" class="image"><img src="images/co2_map.gif" alt="" /></a>
+								<p><li>Then, looking more closely at the relationship between CO2 emissions and human development using scatter plots, both interactive and static:</li>
+									<a href="#" class="image"><img src="images/ihdi_co2.gif" alt="" /></a></p>
+								<p><li>Finally, zooming in on the development of individual countries’ over the last decade, primarily using line charts:</li>
+									<a href="#" class="image"><img src="images/co2_example.png" alt="" style="width: 735px;height:285px;"/></a></p>
+							<h2>3. Recommendations and next steps</h2>
+							<b>The projects led me to some interesting insights, which are formulated in more detail in the Tableau storyboard embedded at the top:</b>
+							<li>In recent decades, only very few countries have managed to keep their consumption-based CO2 footprint close to sustainable levels while ensuring high levels of human development and happiness for their populations. Only one country (Albania) fell within the desired thresholds over the last decade, albeit with a low happiness score.</li>
+							<li>Many countries, mostly in the 'Global North', have managed to reduce their carbon footprints in recent decades while still increasing human development scores. However, these countries must do much more to live up to their historical responsibility in mitigating the climate crisis.</li>
+							<li>Meanwhile, the majority of countries in the 'Global South' have increased their CO2 emissions to improve their human development scores. This underscores the urgency of finding sustainable development pathways for these countries.</li>
+							<br>
+							<b>Future steps:</b>
+							<li>Finally, I recommended a closer look at the identified countries to better understand the underlying reasons for their performance. As any further insights could serve as lessons learned to be applied elsewhere, I hope to find the time to do this myself soon!</li>
 						</div>
 					</section>
 
