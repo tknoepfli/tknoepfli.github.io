@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Gym Attendance Heatmap</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4XYJ4VN31Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4XYJ4VN31Q');
+</script>
+
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Timo Knoepfli - Data Analytics Case Study</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="index.html#two" class="active">Portfolio</a></li>
+						<li><a href="index.html#three">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+				<section id="main" class="wrapper">
+					<div class="inner">
+						<h1 class="major">Heatmap of Gym Attendance</h1>
+						<span class="image fit"><div class='tableauPlaceholder' id='viz1675944937494' style='position: relative'><noscript><a href='#'><img alt='Dashboard ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;Vitalclimbers&#47;Dashboard&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Vitalclimbers&#47;Dashboard' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;Vitalclimbers&#47;Dashboard&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1675944937494');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='777px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script></span>
+						<h2>1. Project overview</h2>
+						<p><b>What:</b><br>A simple Tableau dashboard resulting based on scraped publicly available web data, cleaned in Excel and visualized in Tableau.</p>
+						<p><b>Why:</b><br>As a member of this very popular (and often crowded) gym in Brooklyn, New York, I was interested in the optimal times to work out.</p>
+						<p><b>How:</b><br>1. Scrape data using a cloud web scraper
+							<p>2. Quick data cleaning in Excel </p>
+							<p>3. Data visualization with Tableau to create a simple dashboard</p>
+						<h2>2. Analysing and visualizing the data</h2>
+							<h3>Bringing the datasets together</h3>
+							<p>The main focus of this step was to <b>clean the three datasets</b> so as to retain only data that is relevant for this project to eliminate any possible noise for the analysis before having a stab at it with machine learning, etc. I then made sure that the country names were identical and in accordance with United Nations nomenclature, before I <b>reshaped all three to long format</b> for easier visualization. Finally, I <b>merged all three datasets</b> into one dataframe as a basis for the analysis.</p>
+							<p>With the merged dataset at my disposal, I set out to perform some <b>exploratory analysis and visualization</b> of the data in Python.</p> 
+							<p>Data collection for all three datasets is very complex, so each covers a <b>different set of countries over varying timespans</b>. This posed a challenge for the analysis, because the time span we can analyze depends on the variables examined. In order to not confuse the reader, I chose to <b>limit my analysis</b> to CO2 emissions and inequality-adjusted human development index.</p>  
+							<p>Although I enjoyed using machine learning (k-means clustering) on my dataset, it generated no pertinent additional insights in this project.</p> 
+							<p>In view of the time series and geographical nature of the data, <b>visualizations proved a great way to share my insights with readers</b>. But to gain a deeper understanding of the underlying factors at play, qualitative (political) analysis would be required.</p> 
+							<h3>Defining a research question</h3>
+							<p>Based on the above, I set out to <b>tackle the following research questions</b></p> 
+							<h3>Creating the Tableau storyboard</h3>
+							<p>I chose the following approach to visualize the data with Tableau:</p>
+							<li>First, presenting data on a global scale using maps:</li><br>
+								<a href="#" class="image"><img src="images/co2_map.gif" alt="" /></a>
+							<p><li>Then, looking more closely at the relationship between CO2 emissions and human development using scatter plots, both interactive and static:</li><br>
+								<a href="#" class="image"><img src="images/ihdi_co2.gif" alt="" /></a></p>
+							<p><li>Finally, zooming in on the development of individual countries’ over the last decade, primarily using line charts:</li><br>
+								<a href="#" class="image"><img src="images/co2_example.png" alt="" style="width: 735px;height:285px;"/></a></p>
+						<h2>3. Insights and next steps</h2>
+						<b>The projects led me to some interesting insights, which are formulated in more detail in the Tableau storyboard embedded at the top:</b>
+						<li>In recent decades, only very few countries have managed to keep their consumption-based CO2 footprint close to sustainable levels while ensuring high levels of human development and happiness for their populations. Only one country (Albania) fell within the desired thresholds over the last decade, albeit with a low happiness score.</li>
+						<li>Many countries, mostly in the 'Global North', have managed to reduce their carbon footprints in recent decades while still increasing human development scores. However, these countries must do much more to live up to their historical responsibility in mitigating the climate crisis.</li>
+						<li>Meanwhile, the majority of countries in the 'Global South' have increased their CO2 emissions to improve their human development scores. This underscores the urgency of finding sustainable development pathways for these countries.</li>
+						<br>
+						<b>Next steps:</b>
+						<li>Finally, I recommended a closer look at the identified countries to better understand the underlying reasons for their performance. As any further insights could serve as lessons learned to be applied elsewhere, I hope to find the time to do this myself soon!</li>
+						<br>
+						For a closer look at the Python code please <a href="https://github.com/tknoepfli/Python-Analysis-CO2-consumption">visit my GitHub</a> and feel free to check out the full storyboard <a href="#top">at the top</a> of this page.
+					</div>
+				</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Timo Knoepfli. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
